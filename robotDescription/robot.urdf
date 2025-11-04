@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/f71873f371b6f1055f62b9c0/w/0de4f6b64e52cba69fbb3281/e/237818edb63ecf9d400ec518 -->
+<robot name="robotDescription">
+  <!-- Link part_1 -->
+  <link name="part_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part part_1 -->
+    <visual>
+      <origin xyz="-0.543884 0.11 0.235048" rpy="-1.5708 1.0472 -6.83926e-17"/>
+      <geometry>
+        <mesh filename="package://assets/part_1.stl"/>
+      </geometry>
+      <material name="part_1_material">
+        <color rgba="0.596078 0.176471 0.0509804 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.543884 0.11 0.235048" rpy="-1.5708 1.0472 -6.83926e-17"/>
+      <geometry>
+        <mesh filename="package://assets/part_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_2 -->
+    <visual>
+      <origin xyz="-0.427032 0 0.232654" rpy="2.49273e-17 -0.523599 -1.78052e-16"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__2.stl"/>
+      </geometry>
+      <material name="part_1_2_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.427032 0 0.232654" rpy="2.49273e-17 -0.523599 -1.78052e-16"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_3 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__3.stl"/>
+      </geometry>
+      <material name="part_1_3_material">
+        <color rgba="0.4 0.4 0.4 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_4 -->
+    <visual>
+      <origin xyz="-0.340429 -0.09 0.282654" rpy="0.523599 7.70988e-18 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+      <material name="part_1_4_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.340429 -0.09 0.282654" rpy="0.523599 7.70988e-18 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_5 -->
+    <visual>
+      <origin xyz="-0.526625 0 0.175154" rpy="-0.523599 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__5.stl"/>
+      </geometry>
+      <material name="part_1_5_material">
+        <color rgba="0.4 0.4 0.4 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.526625 0 0.175154" rpy="-0.523599 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__5.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_6 -->
+    <visual>
+      <origin xyz="-0.370679 -0.11 0.335048" rpy="1.5708 -1.0472 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1.stl"/>
+      </geometry>
+      <material name="part_1_6_material">
+        <color rgba="0.596078 0.176471 0.0509804 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.370679 -0.11 0.335048" rpy="1.5708 -1.0472 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_7 -->
+    <visual>
+      <origin xyz="-0.513634 0.09 0.182654" rpy="-0.523599 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+      <material name="part_1_7_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.513634 0.09 0.182654" rpy="-0.523599 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
