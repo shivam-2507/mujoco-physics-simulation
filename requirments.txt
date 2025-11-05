@@ -1,3 +1,4 @@
 mujoco
 numpy
 onshape-to-robot
+mujoco-py

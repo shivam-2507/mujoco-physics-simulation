@@ -5,9 +5,9 @@
   <!-- Link part_1 -->
   <link name="part_1">
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <origin xyz="0.133233 8.98542e-18 0.305474" rpy="0 0 0"/>
+      <mass value="53.2845"/>
+      <inertia ixx="4.49341" ixy="1.20405e-10" ixz="-3.28359" iyy="16.3024" iyz="6.95154e-11" izz="12.3911"/>
     </inertial>
     <!-- Part part_1 -->
     <visual>
@@ -25,77 +25,77 @@
         <mesh filename="package://assets/part_1.stl"/>
       </geometry>
     </collision>
-    <!-- Part part_1_2 -->
+    <!-- Part part_1_3 -->
     <visual>
       <origin xyz="-0.427032 0 0.232654" rpy="2.49273e-17 -0.523599 -1.78052e-16"/>
       <geometry>
-        <mesh filename="package://assets/part_1__2.stl"/>
+        <mesh filename="package://assets/part_1__3.stl"/>
       </geometry>
-      <material name="part_1_2_material">
+      <material name="part_1_3_material">
         <color rgba="0.917647 0.917647 0.917647 1"/>
       </material>
     </visual>
     <collision>
       <origin xyz="-0.427032 0 0.232654" rpy="2.49273e-17 -0.523599 -1.78052e-16"/>
       <geometry>
-        <mesh filename="package://assets/part_1__2.stl"/>
-      </geometry>
-    </collision>
-    <!-- Part part_1_3 -->
-    <visual>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://assets/part_1__3.stl"/>
-      </geometry>
-      <material name="part_1_3_material">
-        <color rgba="0.4 0.4 0.4 1"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
         <mesh filename="package://assets/part_1__3.stl"/>
       </geometry>
     </collision>
     <!-- Part part_1_4 -->
     <visual>
-      <origin xyz="-0.340429 -0.09 0.282654" rpy="0.523599 7.70988e-18 -1.5708"/>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
         <mesh filename="package://assets/part_1__4.stl"/>
       </geometry>
       <material name="part_1_4_material">
-        <color rgba="0.647059 0.647059 0.647059 1"/>
+        <color rgba="0.4 0.4 0.4 1"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.340429 -0.09 0.282654" rpy="0.523599 7.70988e-18 -1.5708"/>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
         <mesh filename="package://assets/part_1__4.stl"/>
       </geometry>
     </collision>
     <!-- Part part_1_5 -->
     <visual>
-      <origin xyz="-0.526625 0 0.175154" rpy="-0.523599 5.55112e-17 1.5708"/>
+      <origin xyz="-0.340429 -0.09 0.282654" rpy="0.523599 7.70988e-18 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/part_1__5.stl"/>
       </geometry>
       <material name="part_1_5_material">
-        <color rgba="0.4 0.4 0.4 1"/>
+        <color rgba="0.647059 0.647059 0.647059 1"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.526625 0 0.175154" rpy="-0.523599 5.55112e-17 1.5708"/>
+      <origin xyz="-0.340429 -0.09 0.282654" rpy="0.523599 7.70988e-18 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/part_1__5.stl"/>
       </geometry>
     </collision>
     <!-- Part part_1_6 -->
     <visual>
+      <origin xyz="-0.526625 0 0.175154" rpy="-0.523599 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__6.stl"/>
+      </geometry>
+      <material name="part_1_6_material">
+        <color rgba="0.4 0.4 0.4 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.526625 0 0.175154" rpy="-0.523599 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_7 -->
+    <visual>
       <origin xyz="-0.370679 -0.11 0.335048" rpy="1.5708 -1.0472 3.14159"/>
       <geometry>
         <mesh filename="package://assets/part_1.stl"/>
       </geometry>
-      <material name="part_1_6_material">
+      <material name="part_1_7_material">
         <color rgba="0.596078 0.176471 0.0509804 1"/>
       </material>
     </visual>
@@ -105,21 +105,53 @@
         <mesh filename="package://assets/part_1.stl"/>
       </geometry>
     </collision>
-    <!-- Part part_1_7 -->
+    <!-- Part part_1_8 -->
     <visual>
       <origin xyz="-0.513634 0.09 0.182654" rpy="-0.523599 5.55112e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/part_1__4.stl"/>
+        <mesh filename="package://assets/part_1__5.stl"/>
       </geometry>
-      <material name="part_1_7_material">
+      <material name="part_1_8_material">
         <color rgba="0.647059 0.647059 0.647059 1"/>
       </material>
     </visual>
     <collision>
       <origin xyz="-0.513634 0.09 0.182654" rpy="-0.523599 5.55112e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/part_1__4.stl"/>
+        <mesh filename="package://assets/part_1__5.stl"/>
       </geometry>
     </collision>
   </link>
+  <!-- Separate link for part_1_2 with slider joint (realistic physics) -->
+  <link name="part_1_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__2.stl"/>
+      </geometry>
+      <material name="part_1_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Prismatic (slider) joint for part_1_2 - gravity controlled -->
+  <joint name="slider_joint_part_1_2" type="prismatic">
+    <parent link="part_1"/>
+    <child link="part_1_2"/>
+    <origin xyz="-0.015609 4.16334e-17 0.540048" rpy="-3.14159 0.523599 -3.14159"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="100" lower="-0.5" upper="0.36" velocity="10000.0"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
 </robot>
