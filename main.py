@@ -1,103 +1,50 @@
 import mujoco
 import mujoco.viewer
 import numpy as np
-import sys
-import threading
-import time
 
+# Load the model
+print("Loading model...")
+model = mujoco.MjModel.from_xml_path(
+    '/Users/shivamwalia/Desktop/mujocoProject/mujocoRobotDescription/scene.xml')
+data = mujoco.MjData(model)
 
-def load_urdf_in_mujoco(urdf_path):
-    """
-    Load a URDF file in MuJoCo and launch the interactive viewer.
+print("Model loaded successfully!")
+print(f"Number of bodies: {model.nbody}")
+print(f"Number of geoms: {model.ngeom}")
+print(f"Number of joints: {model.njnt}")
 
-    Args:
-        urdf_path (str): Path to the URDF file
-    """
-    try:
-        # Load the URDF file - MuJoCo automatically converts it to MJCF format
-        model = mujoco.MjModel.from_xml_path(urdf_path)
+# Print collision info
+print("\n" + "="*60)
+print("COLLISION GEOMETRY INFO")
+print("="*60)
+for i in range(model.ngeom):
+    geom_name = mujoco.mj_id2name(
+        model, mujoco.mjtObj.mjOBJ_GEOM, i) or f"geom_{i}"
+    contype = model.geom_contype[i]
+    conaffinity = model.geom_conaffinity[i]
+    geom_type = model.geom_type[i]
+    type_names = ["plane", "hfield", "sphere", "capsule",
+                  "ellipsoid", "cylinder", "box", "mesh"]
+    type_name = type_names[geom_type] if geom_type < len(
+        type_names) else "unknown"
 
-        # Create data structure for simulation
-        data = mujoco.MjData(model)
+    if contype > 0 or conaffinity > 0:  # Only show collision geoms
+        print(
+            f"{geom_name:30s} type={type_name:10s} contype={contype:3d} conaffinity={conaffinity:3d}")
 
-        # Set initial position of slider to start at top of ramp
-        # Negative value moves it backward (up the ramp)
-        if model.njnt > 0:
-            data.qpos[0] = -0.4  # Start 400mm up the ramp (adjust this value)
+print("\n" + "="*60)
+print("LAUNCHING VIEWER")
+print("="*60)
+print("Controls:")
+print("  - Double-click and drag to rotate view")
+print("  - Right-click and drag to pan")
+print("  - Scroll to zoom")
+print("  - Ctrl+Right-click to apply forces to bodies")
+print("  - Press SPACE to pause/unpause")
+print("  - Press ESC to exit")
+print("="*60)
 
-        # Launch the interactive viewer
-        print(f"Successfully loaded URDF: {urdf_path}")
-        print(f"Model has {model.nbody} bodies and {model.njnt} joints")
+# Launch viewer
+mujoco.viewer.launch(model, data)
 
-        # Debug joint axis and gravity
-        if model.njnt > 0:
-            joint_axis = model.jnt_axis[0]
-            print(f"Joint axis: {joint_axis}")
-            print(f"Gravity: {model.opt.gravity}")
-            print(f"Joint damping: {model.dof_damping[0]}")
-            print(f"Joint friction: {model.dof_frictionloss[0]}")
-            print(f"Starting position: {data.qpos[0]}")
-
-        # Check if running on macOS and provide instructions
-        if sys.platform == "darwin":
-            print("\nOn macOS, use 'mjpython' instead of 'python3' to run this script:")
-            print(f"  mjpython {__file__}")
-            print("\nAlternatively, launching viewer with launch() instead...")
-
-        print("\n=== Real-time velocity monitoring ===")
-        print("Position (m) | Velocity (m/s) | Time (s)")
-        print("-" * 50)
-
-        # Track if viewer is still running
-        viewer_running = [True]
-
-        # Function to apply gravity force along the ramp
-        # Force = mass * g * sin(30°) = 5.0 * 9.81 * 0.5 = 24.525 N
-        def apply_ramp_gravity(model, data):
-            if model.njnt > 0:
-                data.qfrc_applied[0] = 24.525  # Constant force down the ramp
-
-        # Function to print velocity periodically
-        def monitor_velocity():
-            last_time = 0.0
-            while viewer_running[0]:
-                # Apply gravity force at every step
-                apply_ramp_gravity(model, data)
-
-                if model.njnt > 0 and data.time - last_time >= 0.1:
-                    pos = data.qpos[0]
-                    vel = data.qvel[0]
-                    print(f"{pos:11.4f} | {vel:14.4f} | {data.time:8.3f}")
-                    last_time = data.time
-                time.sleep(0.05)
-
-        # Start monitoring thread
-        monitor_thread = threading.Thread(target=monitor_velocity, daemon=True)
-        monitor_thread.start()
-
-        # Use launch() which works with regular Python on macOS
-        mujoco.viewer.launch(model, data)
-
-        viewer_running[0] = False
-
-    except Exception as e:
-        print(f"Error loading URDF: {e}")
-        print("\nMake sure:")
-        print("1. The URDF file path is correct")
-        print("2. All mesh files referenced in the URDF are accessible")
-        print("3. The URDF is valid")
-
-        if sys.platform == "darwin" and "mjpython" in str(e):
-            print("\nFor better viewer experience on macOS, run with:")
-            print(f"  mjpython {__file__}")
-
-
-if __name__ == "__main__":
-    # Use relative path from project root
-    # This ensures MuJoCo can resolve package:// paths correctly
-    urdf_file = "robotDescription/robot.urdf"
-
-    # Alternative: use absolute path if needed
-    # urdf_file = "/Users/shivamwalia/Desktop/mujocoProject/robotDescription/robot.urdf"
-
-    load_urdf_in_mujoco(urdf_file)
+print("\nSimulation ended.")
