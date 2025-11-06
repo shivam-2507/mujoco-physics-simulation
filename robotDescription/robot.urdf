@@ -151,7 +151,7 @@
     <child link="part_1_2"/>
     <origin xyz="-0.015609 4.16334e-17 0.540048" rpy="-3.14159 0.523599 -3.14159"/>
     <axis xyz="1 0 0"/>
-    <limit effort="100" lower="-0.5" upper="0.36" velocity="10000.0"/>
+    <limit effort="100" lower="-0.36" upper="0.375" velocity="10000.0"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
 </robot>
